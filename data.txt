@@ -1,9 +1,12 @@
 Plan for this project.
-1> Environment setup. (This means creating react app)
-2> Setup github configurations
-3> Install react app
-4> Install tailwind CSS package
-5> install react router, react icons
+1> Environment setup. (This means creating react app, intalling extension that are ES7+ React snippet, Tailwind CSS Intellisence. Install react-router-dom, react-icons, framer-motion, google fonts)
+2> Setup github configurations (Done)
+3> Install react app (Done)
+4> Install tailwind CSS package (Done)
+5> install react router, react icons (Done)
 6> Install firebase for authentication
 7> Install framer motion for animation
 8> Setup Firebase project
+
+
+First of all we deleted initial src folder from Frontend and created our new src folder because initial was pre-setup but we have to customize our application.
