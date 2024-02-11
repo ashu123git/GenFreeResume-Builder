@@ -2,6 +2,8 @@ import React from "react";
 import { Logo } from "../assets";
 import { Footer } from "../containers";
 import { AuthButton } from "../components";
+import { FaGoogle, FaGithub } from "react-icons/fa6";
+// In the above import, I have imported FaGoogle and FaGithub from react icons and I can send it as a reference props to other components and then I can use it as a component inside that other component. whenever we use anything as a component, we start that with capital letter.
 
 const AuthScreen = () => {
   return (
@@ -19,8 +21,17 @@ const AuthScreen = () => {
         </p>
         <h2 className="text-2xl text-gray-600"> Authenticate</h2>
         <div className="w-full lg:w-96 rounded-md p-2 flex flex-col items-center justify-center gap-6">
-          <AuthButton />
-          <AuthButton />
+          {/* GoogleAuthProvider is a class name provided by Firebase to authenticate using google. Similarly, GitHubAuthProvider is also there */}
+          <AuthButton
+            Icon={FaGoogle}
+            label={"SignIn with Google"}
+            provider={"GoogleAuthProvider"}
+          />
+          <AuthButton
+            Icon={FaGithub}
+            label={"SignIn with GitHub"}
+            provider={"GithubAuthProvider"}
+          />
         </div>
       </div>
 
