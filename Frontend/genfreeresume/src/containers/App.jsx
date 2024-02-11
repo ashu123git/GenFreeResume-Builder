@@ -4,14 +4,23 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { HomeScreen, AuthScreen } from "../pages";
 
+//Below two imports are import from react-query to manage and maintain the state throughout the app.
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
 const App = () => {
+  const clientProvider = new QueryClient();
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/auth" element={<AuthScreen />} />
-      </Routes>
-    </Suspense>
+    <QueryClientProvider client={clientProvider}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/auth" element={<AuthScreen />} />
+        </Routes>
+      </Suspense>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 };
 

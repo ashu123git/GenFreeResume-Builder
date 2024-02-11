@@ -7,6 +7,8 @@ Plan for this project.
 6> Install firebase for authentication
 7> Install framer motion for animation
 8> Setup Firebase project
+9> React query library is used for state management
+10> React toastify library is used for alert notification
 
 
 First of all we deleted initial src folder from Frontend and created our new src folder because initial was pre-setup but we have to customize our application. Now I setted up the front-end. Setted up the tailwind css from Tailwind website. I just followed their steps from tailwind using react website. Now I setted up the firebase. For this, I installed firebase using npm and then created a project in google.firebase.com. Now we have to create a web app and provide our name. After this we need firebase storage. So go to homepage. Build > Storage > Get Started. Click start in production mode. Now once the storage is set up, we can add security rules as of who can access the data/website and who cannot. So initially, it will be set to denied for all users. So we have to go to security rules, and update false to true so that it is accessble to everyone and then later we can update the rules. After that we need to setup firestore database. So again Build > Firestore Database > Create Database. After that update rules to true.

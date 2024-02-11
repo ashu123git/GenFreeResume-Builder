@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Logo } from "../assets";
 import { Footer } from "../containers";
-import { AuthButton } from "../components";
+import { AuthButton, Spinners } from "../components";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
+import useUser from "../hooks/useUser";
+import { useNavigate } from "react-router-dom";
 // In the above import, I have imported FaGoogle and FaGithub from react icons and I can send it as a reference props to other components and then I can use it as a component inside that other component. whenever we use anything as a component, we start that with capital letter.
 
 const AuthScreen = () => {
+  const { data, isLoading, isError } = useUser();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isLoading && data) {
+      navigate("/", { replace: true });
+    }
+  }, [isLoading, data]);
+
+  if (isLoading) {
+    return <Spinners />;
+  }
+
   return (
     <div className="auth-section">
       {/* {Top section} */}
