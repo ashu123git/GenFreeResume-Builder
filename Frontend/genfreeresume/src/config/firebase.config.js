@@ -1,6 +1,7 @@
 import { getApp, getApps, initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 // Get it from the project you created in Firebase Website under project settings.
 const firebaseConfig = {
@@ -17,6 +18,7 @@ const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 const db = getFirestore(app);
-export { auth, db };
+const storage = getStorage(app);
+export { auth, db, storage };
 
 // after this we have to enable the authentication from firebase website. Go to Build > Authentication > Get started. Select the authentication required. In our case it is google and github.

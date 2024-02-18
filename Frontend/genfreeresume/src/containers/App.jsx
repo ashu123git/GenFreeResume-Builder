@@ -2,11 +2,18 @@
 
 import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { HomeScreen, AuthScreen } from "../pages";
+import {
+  HomeScreen,
+  AuthScreen,
+  UserProfile,
+  CreateResume,
+  ResumeDetails,
+} from "../pages";
 
 //Below two imports are import from react-query to manage and maintain the state throughout the app.
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { CreateTemplate } from "../pages";
 
 const App = () => {
   const clientProvider = new QueryClient();
@@ -17,6 +24,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/auth" element={<AuthScreen />} />
+          <Route path="/template/create" element={<CreateTemplate />} />
+          <Route path="/profile/:uid" element={<UserProfile />} />
+          <Route path="/resume/*" element={<CreateResume />} />
+          <Route path="/resumeDetail/:templateID" element={<ResumeDetails />} />
         </Routes>
       </Suspense>
       <ReactQueryDevtools initialIsOpen={false} />

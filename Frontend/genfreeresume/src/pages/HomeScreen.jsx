@@ -1,5 +1,8 @@
-import React from "react";
-import { Header } from "../components";
+import React, { Suspense } from "react";
+import { Header, Spinners } from "../components";
+import { Route, Routes } from "react-router-dom";
+import { HomeContainer } from "../containers";
+import { CreateTemplate, UserProfile } from "../pages";
 
 const HomeScreen = () => {
   return (
@@ -7,7 +10,13 @@ const HomeScreen = () => {
       {/* header section */}
       <Header />
       {/* body section */}
-      <main></main>
+      <main className="w-full">
+        <Suspense fallback={<Spinners />}>
+          <Routes>
+            <Route path="/" element={<HomeContainer />} />
+          </Routes>
+        </Suspense>
+      </main>
     </div>
   );
 };
