@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import { Header, Spinners } from "../components";
 import { Route, Routes } from "react-router-dom";
 import { HomeContainer } from "../containers";
-import { CreateTemplate, UserProfile } from "../pages";
 
 const HomeScreen = () => {
   return (

@@ -13,7 +13,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-// if app is already set up, load it elsed create a new app.
+// if app is already set up, load it else create a new app.
 const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
